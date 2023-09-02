@@ -7,7 +7,6 @@ jobs:
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage/reports/
-          files: ./coverage1.xml,./coverage2.xml
+          path_to_write_report: ./coverage/codecov_report.txt
           fail_ci_if_error: true
           verbose: true
