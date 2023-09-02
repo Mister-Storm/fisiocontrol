@@ -1,7 +1,9 @@
 name: Fisiocontrol CI
-on: [push]
+on: [push, pull_request]
 jobs:
-  steps:
-    uses: codecov/codecov-action@v3
-    with:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
