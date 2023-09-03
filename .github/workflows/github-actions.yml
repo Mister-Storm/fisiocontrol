@@ -4,7 +4,14 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout Git repository
+        uses: actions/checkout@v3
+      - name: Install Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          cache: maven
       - run: ./mvn quarkus:test -Dquarkus.test.disable-continuous-testing=true
       - uses: codecov/codecov-action@v3
         name: Upload coverage reports to Codecov
