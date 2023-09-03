@@ -4,7 +4,7 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - run: ../mvnw quarkus:test -Dquarkus.test.disable-continuous-testing=true
+      - run: ./mvn quarkus:test -Dquarkus.test.disable-continuous-testing=true
       - uses: codecov/codecov-action@v3
         name: Upload coverage reports to Codecov
         env:
