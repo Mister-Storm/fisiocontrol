@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: codecov/codecov-action@v3
-      - name: Upload coverage reports to Codecov
+        name: Upload coverage reports to Codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
